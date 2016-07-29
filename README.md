@@ -12,11 +12,9 @@ Digital i/o pin 2-13 for Indicator LED Output:
   
   D pin3:GREEN LED (add 180Ω resistor to the anode)
   
-  D pin3:GREEN LED (add 180Ω resistor to the anode)
-  
   D pin4:GREEN LED (add 180Ω resistor to the anode)
   
-  D pin5:RED LED (add 180Ω resistor to the anode)
+  D pin5:GREEN LED (add 180Ω resistor to the anode)
   
   D pin6:RED LED (add 180Ω resistor to the anode)
   
@@ -26,11 +24,13 @@ Digital i/o pin 2-13 for Indicator LED Output:
   
   D pin9:RED LED (add 180Ω resistor to the anode)
   
-  D pin10:BLUE LED (add 120Ω resistor to the anode)
+  D pin10:RED LED (add 180Ω resistor to the anode)
   
-  D pin10:BLUE LED (add 120Ω resistor to the anode)
+  D pin11:BLUE LED (add 120Ω resistor to the anode)
   
-  D pin10:BLUE LED (add 120Ω resistor to the anode)
+  D pin12:BLUE LED (add 120Ω resistor to the anode)
+  
+  D pin13:BLUE LED (add 120Ω resistor to the anode)
   
 Analog i/o pin 3,5,7 for ADXL335 Accelerometer Input, Analog i/o pin 4 for CarSpeed Pulse Input:
 
