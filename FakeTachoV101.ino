@@ -303,7 +303,7 @@ void loop(){
   if (carSpeed >= 5) {  //5km以上
     for  (i = 5; i < 14; i++){  // LED4～
       if (rpm > IDLE_RPM) {  //800回転は無視  
-        if (rpm >= IDLE_RPM + ((i-4) * (STEP_RPM * 1.1))) {  //点灯補正：USB接続時：0.6、USB非接続時：1.1 電源電圧でanalogRead値が変わる
+        if (rpm >= IDLE_RPM + ((i-4) * (STEP_RPM * 1.1))) {  //点灯補正(VIN電圧9V＋USB電源電圧5V≒基盤供給電圧6V時にrpm0.6倍が適正)
           digitalWrite(i,HIGH);
         } else {    //STEPに満たない時
           if (loopCnt % 10 == 0) {   //ちらつき防止
