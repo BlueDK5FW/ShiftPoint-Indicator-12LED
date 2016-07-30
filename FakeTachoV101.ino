@@ -1,5 +1,5 @@
 //Shift Point Indicator(Fake Tachometer) using a Speedpulse and a Accelerometer
-//2016/7/29 BlueDK5FW
+//2016/7/30 BlueDK5FW
 #include <MsTimer2.h>
 #define P_HI 170 //Pulse 分岐値
 #define GREEN1 2 //GREEN LED 1 の出力ピン番号
@@ -167,7 +167,7 @@ void loop(){
 //時速1kmで走るとパルス幅は（1時間（3600秒）÷2548パルス=1.41287284144427秒）
 //　→　時速は（1.41287284144427÷計測パルス幅）（レシプロカル）
   nowTime = millis();
-  pulse = analogRead(SPEED_PIN);
+  pulse = analogRead(SPEED_PIN);  //analogRead値はarduino電源電圧で変化する→ex)VIN+USBからUSBを抜くと値が変わる
 /*↓
   if (loopCnt % 30 == 0){ 
   Serial.print("pulse:");
@@ -303,7 +303,7 @@ void loop(){
   if (carSpeed >= 5) {  //5km以上
     for  (i = 5; i < 14; i++){  // LED4～
       if (rpm > IDLE_RPM) {  //800回転は無視  
-        if (rpm >= IDLE_RPM + ((i-4) * (STEP_RPM * 1.1))) {  //点灯補正(VIN電圧9V＋USB電源電圧5V≒基盤供給電圧6V時にrpm0.6倍が適正)
+        if (rpm >= IDLE_RPM + ((i-4) * (STEP_RPM * 0.6))) {  //点灯補正(VIN電圧9V＋USB電源電圧5V≒基盤供給電圧6V時にrpm0.6倍が適正)
           digitalWrite(i,HIGH);
         } else {    //STEPに満たない時
           if (loopCnt % 10 == 0) {   //ちらつき防止
@@ -345,7 +345,7 @@ void loop(){
 //               Speed Section  (別スレッド)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void calcSpeed(){
-  float speed = 0;
+  float speed = 0.0;
   if (elapsedTime) {
     speed = 1412.87284144427 / elapsedTime;    //3600秒÷(637*4パルス) = 1.41287284144427
 ///*↓
@@ -509,6 +509,3 @@ if (loopCnt == 5000){
       if (rpm > IDLE_RPM) {  //800回転は無視
         if (rpm >= IDLE_RPM + ((i-4) * (STEP_RPM * 0.6))) {  //点灯補正：右側まで光ってる所がみたいのでSTEP値到達の0.6倍の回転数でつけてる
 //↑*/
-
-
-
