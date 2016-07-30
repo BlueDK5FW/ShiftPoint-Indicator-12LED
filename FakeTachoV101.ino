@@ -26,6 +26,7 @@
 #define TIME4 100 //Time4(msec)
 #define TIME5 1500 //Time5(msec)
 #define TIME6 3000 //Time6(msec)
+#define TIME7 5000 //Time7(msec)
 #define DEAD 7.0 //静止時のY軸デッドゾーン
 #define MAX_Y 402 //★1G時のY軸
 #define MIN_Y 265 //★-1G時のY軸 402-265=137
@@ -337,7 +338,7 @@ void loop(){
   last2Y = lastY;
   lastY = y;
   loopCnt++;
-  if (acceleroTime + 5000 <  millis()) {  //acceleroBlinkは1度なったら5秒間はacceleroBlinkにしない
+  if (acceleroTime + TIME7 <  millis()) {  //acceleroBlinkは1度なったら5秒間はacceleroBlinkにしない
     acceleroTime = blinkFlg = 0;
   }
 }  //END loop()
