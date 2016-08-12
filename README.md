@@ -1,6 +1,7 @@
 # ShiftPoint Indicator 12LED with 7SegmentLED gear display (Fake tachometer) - V2.0
 
 add 7Segment LED gear indication to a shiftpoint indicator and assume it ver2.0.
+
 I used an arduino nano micro boad.
 
 Description of connected equipment:
