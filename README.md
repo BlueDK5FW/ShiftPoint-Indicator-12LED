@@ -7,12 +7,19 @@ I used an arduino nano micro boad.
 Description of connected equipment:
 
 connect lead3 or lead8 of 7Segment LED to 5V PIN(anode common).
+
 connect shift registers QA～QG to E,D,C,B,A,F,G segment of 7segment LED each via 240Ω resister.(D.P.segment is not used.)
+
 connect shift registers SER(serial),RCLK(storage registor clock)、SRCLK(shift registor clock) to A0～A2 PIN（use as Digital i/o）.
+
 connect shift registers VCC to 5V PIN, and connect VCC to 0.1μF Ceramic Condenser, and connect Ceramic Condenser to GND PIN.
+
 connect shift registers SRCLR(direct overriding clear input) to 5V PIN.
+
 connect shift registers GND,OE to GND PIN.
+
 shift registers QH、QH' is not used.
+
 
 Digital i/o pin 2-13 for Indicator LED Output: 
 
